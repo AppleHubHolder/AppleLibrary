@@ -1,5 +1,5 @@
 local library = {
-	Version = "0.36",
+	Version = "0.01",
 	WorkspaceName = "Apple Lib",
 	flags = {},
 	signals = {},
@@ -6929,13 +6929,13 @@ function library:CreateWindow(options, ...)
 					persistoptions.Workspace = n or o
 				end
 			}}, {"AddPersistence", "__Designer.Persistence.WorkspaceProfile", filessection, persistoptions}, {"AddButton", "__Designer.Button.TerminateGUI", settingssection, {{
-				Name = "Terminate GUI",
+				Name = "Terminate Script",
 				Callback = library.unload
 			}, {
-					Name = "Reset GUI",
+					Name = "Reset Config",
 					Callback = resetall
 				}, {
-					Name = "Reset Designer",
+					Name = "Reset Themes",
 					Callback = function()
 						destroyrainbows = true
 						pcall(function()
@@ -6957,13 +6957,13 @@ function library:CreateWindow(options, ...)
 					lasthidebing = os.clock()
 				end
 			}}, {"AddLabel", "__Designer.Label.Version", settingssection, {
-				Name = "Library Version: " .. tostring(library.Version or "?")
+				Name = "Version: " .. tostring(library.Version or "?")
 			}}}
 		if setclipboard and daaata[8] then
 			local common_table = daaata[8][4]
 			if common_table then
 				common_table[1 + #common_table] = {
-					Name = "Copy Theme",
+					Name = "Copy Theme (JSON)",
 					Callback = function()
 						local working_with = {}
 						if #flags > 0 then
@@ -7011,7 +7011,7 @@ function library:CreateWindow(options, ...)
 		end
 		if options.Credit ~= false then
 			daaata[1 + #daaata] = {"AddLabel", "__Designer.Label.Creator", detailssection, {
-				Text = "Library by Apple#5229 "
+				Text = "Apple Hub - r.epilus"
 			}}
 		elseif "Gee, thanks for your support." then
 		end
