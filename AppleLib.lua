@@ -6890,9 +6890,9 @@ function library:CreateWindow(options, ...)
 		}
 		local daaata = {{"AddTextbox", "__Designer.Textbox.ImageAssetID", backgroundsection, {
 			Name = "Image Asset ID",
-			Placeholder = "rbxassetid://4427304036",
+			Placeholder = "rbxassetid://00000001",
 			Flag = "__Designer.Background.ImageAssetID",
-			Value = "rbxassetid://4427304036",
+			Value = "rbxassetid://00000001",
 			Callback = updatecolorsnotween
 		}}, {"AddColorpicker", "__Designer.Colorpicker.ImageColor", backgroundsection, {
 				Name = "Image Color",
@@ -6929,7 +6929,7 @@ function library:CreateWindow(options, ...)
 					persistoptions.Workspace = n or o
 				end
 			}}, {"AddPersistence", "__Designer.Persistence.WorkspaceProfile", filessection, persistoptions}, {"AddButton", "__Designer.Button.TerminateGUI", settingssection, {{
-				Name = "Terminate Script",
+				Name = "Terminate",
 				Callback = library.unload
 			}, {
 					Name = "Reset Config",
