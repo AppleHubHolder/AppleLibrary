@@ -10,7 +10,7 @@ local library = {
 	colored = {},
 	configuration = {
 		hideKeybind = Enum.KeyCode.RightShift,
-		smoothDragging = false,
+		smoothDragging = true,
 		easingStyle = Enum.EasingStyle.Quart,
 		easingDirection = Enum.EasingDirection.Out
 	},
@@ -6923,7 +6923,7 @@ function library:CreateWindow(options, ...)
 				Desginer = true
 			}}, {"AddTextbox", "__Designer.Textbox.WorkspaceName", filessection, {
 				Name = "Config Name",
-				Value = library.WorkspaceName or "Unnamed Workspace",
+				Value = "Filename",
 				Flag = "__Designer.Files.WorkspaceFile",
 				Callback = function(n, o)
 					persistoptions.Workspace = n or o
