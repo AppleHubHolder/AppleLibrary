@@ -6885,7 +6885,7 @@ function library:CreateWindow(options, ...)
 			Flag = "__Designer.Background.WorkspaceProfile",
 			Flags = true,
 			Suffix = "Config",
-			Workspace = library.WorkspaceName or "Unnamed Workspace",
+			Workspace = "Filename",
 			Desginer = true
 		}
 		local daaata = {{"AddTextbox", "__Designer.Textbox.ImageAssetID", backgroundsection, {
