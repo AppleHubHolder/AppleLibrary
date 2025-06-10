@@ -6851,10 +6851,10 @@ function library:CreateWindow(options, ...)
 			Side = "right"
 		})
 		local detailssection = designer:CreateSection({
-			Name = "More Info"
+			Name = "Information"
 		})
 		local filessection = designer:CreateSection({
-			Name = "Profiles",
+				Name = "Configs",
 			Side = "right"
 		})
 		local settingssection = designer:CreateSection({
@@ -6881,7 +6881,7 @@ function library:CreateWindow(options, ...)
 		end
 		local flags = {}
 		local persistoptions = {
-			Name = "Workspace Profile",
+			Name = "Script Config",
 			Flag = "__Designer.Background.WorkspaceProfile",
 			Flags = true,
 			Suffix = "Config",
@@ -6912,17 +6912,17 @@ function library:CreateWindow(options, ...)
 			}}, {"AddToggle", "__Designer.Toggle.UseBackgroundImage", backgroundsection, {
 				Name = "Use Background Image",
 				Flag = "__Designer.Background.UseBackgroundImage",
-				Value = true,
+				Value = false,
 				Callback = updatecolorsnotween
 			}}, {"AddPersistence", "__Designer.Persistence.ThemeFile", filessection, {
-				Name = "Theme Profile",
+				Name = "Theme Config",
 				Flag = "__Designer.Files.ThemeFile",
 				Workspace = "Apple Lib Themes",
 				Flags = flags,
 				Suffix = "Theme",
 				Desginer = true
 			}}, {"AddTextbox", "__Designer.Textbox.WorkspaceName", filessection, {
-				Name = "Workspace Name",
+				Name = "Config Name",
 				Value = library.WorkspaceName or "Unnamed Workspace",
 				Flag = "__Designer.Files.WorkspaceFile",
 				Callback = function(n, o)
@@ -6963,7 +6963,7 @@ function library:CreateWindow(options, ...)
 			local common_table = daaata[8][4]
 			if common_table then
 				common_table[1 + #common_table] = {
-					Name = "Copy Theme (JSON)",
+					Name = "Copy Theme",
 					Callback = function()
 						local working_with = {}
 						if #flags > 0 then
