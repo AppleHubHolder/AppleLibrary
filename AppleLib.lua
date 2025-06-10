@@ -6935,7 +6935,7 @@ function library:CreateWindow(options, ...)
 					Name = "Reset Config",
 					Callback = resetall
 				}, {
-					Name = "Reset Themes",
+					Name = "Reset Theme",
 					Callback = function()
 						destroyrainbows = true
 						pcall(function()
